@@ -67,12 +67,13 @@ pub fn main() void {
     };
 
     // FIX ME!
-    // Please pass Glorp to printCharacter():
-    printCharacter(???);
+    // Please pass our Character "glorp" to printCharacter():
+    printCharacter(&glorp);
 }
 
 // Note how this function's "c" parameter is a pointer to a Character struct.
-fn printCharacter(c: *Character) void {
+fn printCharacter(c: *const Character) void {
+
     // Here's something you haven't seen before: when switching an enum, you
     // don't have to write the full enum name. Zig understands that ".wizard"
     // means "Class.wizard" when we switch on a Class enum value:
